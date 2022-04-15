@@ -1,0 +1,141 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.hero-container {
+    display:flex;
+    width:100%;
+    height: 120vh;
+    background-color:#000;
+}
+
+.hero-content {
+    margin-left:75px;
+}
+
+.top-hero {
+    display:flex;
+    margin-top:80px;
+
+}
+
+.live-wrapper {
+    width:500px;
+    height:180px;
+}
+.live-wrapper img {
+    width:100%;
+    height:100%;
+}
+
+.date-wrapper{
+    margin-top: 25px;
+    line-height:0.7;
+}
+.date-wrapper p {
+    color:#fff;
+}
+.date-wrapper p {
+    font-weight: 700;
+    font-size: 3.1rem;
+}
+
+.date-wrapper .wrapper-p{
+    letter-spacing:0.1px;
+}
+
+.date-wrapper .april {
+    background: conic-gradient(from 180deg at 50% 50%, #DDAF17 -47.64deg, #936B00 42.59deg, #CB8900 134.52deg, #AB7100 228.88deg, #DDAF17 312.36deg, #936B00 402.59deg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.middle-hero{
+    margin:33px 0;
+    display:flex;
+    width:100%;
+    justify-content:center;
+    gap: 12px;
+}
+
+.middle-hero h1 {
+    font-size: 3rem;
+    color:#fff;
+}
+.middle-hero .first-child {
+    background: conic-gradient(from 180deg at 50% 50%, #DDAF17 -47.64deg, #936B00 42.59deg, #CB8900 134.52deg, #AB7100 228.88deg, #DDAF17 312.36deg, #936B00 402.59deg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.middle-hero .vertical {
+    height: 50px;
+    width:3px;
+    background-color: rgba(147, 107, 0, 1);
+    margin-top: 12px;
+    border-radius:1px;
+}
+
+
+.bottom-hero {
+    width:100%;
+    height:7%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.bottom-hero a{
+    text-decoration:none;
+    width: 40% ;
+    height:100%;
+    text-align:center;
+    color: #BE8200;
+    font-size: 2rem;
+    background-color: #F3F3F3;
+    border-radius: 3px;
+    border: 1.3px solid rgba(147, 107, 0, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* rugger image wrapper */
+.ruger-image-wrapper {
+    width:500px;
+    height:500px;
+}
+
+.ruger-image-wrapper img {
+    width: 100%;
+    height:100%;
+}
+
+/* media query */
+
+@media screen and (max-width: 1065px) {
+    .hero-container{
+        display:flex;
+        flex-direction:column;
+        height:100%;
+    }
+    .ruger-image-wrapper{
+        margin-left:75px;
+    }
+    .live-wrapper img {
+        width:450px;
+        height:180px;
+        margin-left: 20px;
+    }
+    .ruger-image-wrapper {
+       display:hidden;
+       visibility: hidden;
+    }
+    .bottom-hero a {
+        margin-right: 6rem;
+    }
+    .date-wrapper{
+    margin-right: 5rem;
+}}

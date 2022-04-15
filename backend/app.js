@@ -5,17 +5,23 @@ const pug = require('pug');
 const mongoose = require("mongoose")
 const _ = require('lodash');
 const path = require('path');
+const cors = require('cors')
 
 const { Ticket } = require('./models/ticket')
 const { initializePayment, verifyPayment } = require('./config/paystack')(request);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3500;
 
 const app = express();
+
+const corsoptions = {
+    origin: '*'
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public/')));
+app.use(cors(corsoptions))
 app.set('view engine', pug);
 
 app.get('/', (req, res) => {
@@ -23,21 +29,28 @@ app.get('/', (req, res) => {
 });
 
 
-app.post('/paystack/pay', (req, res) => {
+app.post('/paystack/pay', async(req, res) => {
+    console.log("Got data")
+    console.log(req.body)
     const form = _.pick(req.body, ['amount', 'email', 'full_name']);
     form.metadata = {
         full_name: form.full_name
     }
     form.amount *= 100;
 
-    initializePayment(form, (error, body) => {
+    initializePayment(form, async(error, body) => {
         if (error) {
-            console.log(error);
-            return res.redirect('/error')
+            console.log(error)
+            return res.redirect('/error');
         }
-        response = JSON.parse(body);
-        console.log(response.data.reference)
-        res.redirect(response.data.authorization_url)
+        const response = JSON.parse(body);
+        console.log(body)
+        if (response.status === false){
+            return res.status(500).send(`An Error Occured: ${response.message}`)
+        }
+        console.log(response.data.reference);
+        console.log(response.data.authorization_url);
+        res.redirect(response.data.authorization_url);
     });
 });
 

@@ -7,7 +7,7 @@
 
 .ticket-container {
     width:100%;
-    height:150vh;
+    height:120vh;
     display:flex;
     flex-basis:70%;
     background-color: #fff;
@@ -15,20 +15,20 @@
 
 .ticket-form {
     display:flex;
-    width:100%;
+    width:50%;
     height:100%;
     flex-direction: column;
     gap: 50px;
-
+    margin-left: 250px;
 }
 .top-section {
     display:flex;
 }
+
 .ticket-write {
     margin-top: 22px;
     width: 70%;
     margin-left: 22px;
-
 
 }
 
@@ -57,23 +57,23 @@ p{
     height: 60vh;
     display:flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     width: 90%;
     margin-left: 22px;
 }
 
 input{
-    height: 60px;
+    height: 50px;
     border: 1px solid #C8C8C8;
     outline:none;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 input["text"]{
     margin-left: 22px;
 }
 
 input::placeholder{
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     padding:0 4%;
     color: #797979;
 }
@@ -116,15 +116,17 @@ input::placeholder{
     height: 2.5rem;
     justify-content:center;
     text-align: center;
+    align-self:center;
     gap: 12px;
+    width:100%;
 }
 
 .button-wrapper a {
-    margin-left: 50px;
-    width: 70%;
+    width: 100%;
     height:2.5rem;
     text-align:center;
     font-size: 1.6rem;
+    text-decoration: none;
 }
 
 /* .button-wrapper .btn-1 {
@@ -143,6 +145,21 @@ input::placeholder{
 
 @media screen and (max-width:718px) {
     .ticket-container {
+       width: 120%;
+    }
+    .ticket-form {
+        display:flex;
+        width:80%;
+        height:40%;
         flex-direction: column;
+        gap: 10px;
+        margin-left: 20px;
+    }
+
+    .ticket-write {
+        margin-top: 22px;
+        width: 50%;
+        margin-left: 13px;
+
     }
 }
