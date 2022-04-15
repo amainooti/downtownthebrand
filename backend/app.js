@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
     res.render('index.pug');
 });
 
+
 app.post('/paystack/pay', (req, res) => {
     const form = _.pick(req.body, ['amount', 'email', 'full_name']);
     form.metadata = {
@@ -71,7 +72,7 @@ app.get('/paystack/callback', (req, res) => {
 
 app.get('/receipt/:id', (req, res) => {
     const id = req.params.id;
-    Ticket.findById(id).then((ticketSchema) => {
+    Ticket.findById(id).then((ticket) => {
         if (!ticket) {
             //handle error when the ticket is not found
             res.redirect('/error')
@@ -102,4 +103,4 @@ mongoose.connect(
 
 app.listen(port, () => {
     console.log(`App running on port ${port}`)
-});
+})
