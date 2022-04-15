@@ -1,5 +1,7 @@
 import React from 'react';
 import "./section.css";
+import RugerLive from "../assets/images/RUGER.png";
+import RugerImage from "../assets/images/image1.png"
 
 function Section() {
   return (
@@ -7,7 +9,7 @@ function Section() {
         <div className="hero-content">
             <div className="top-hero">
                 <div className="live-wrapper">
-                    <img src="images/RUGER.png" alt="" />
+                    <img src={RugerLive} alt="" />
                 </div>
                 <div className="date-wrapper">
                     <p className='wrapper-p'>22</p>
@@ -25,7 +27,7 @@ function Section() {
             </div>
         </div>
         <div className="ruger-image-wrapper">
-            <img src="/images/image1.png" alt="" />
+            <img src={RugerImage} alt="" />
         </div>
     </div>
   )

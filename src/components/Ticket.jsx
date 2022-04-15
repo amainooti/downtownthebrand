@@ -8,7 +8,7 @@ import {
   } from "react-router-dom";
 import { Formik } from 'formik';
 import { usePaystackPayment } from "react-paystack";
-
+import RugerLive from "../assets/images/Rugerlive.jpg";
 
 import "./Ticket.css";
 
@@ -76,21 +76,21 @@ function Ticket() {
   )
 }
 
-// <div className="ticket-content">
-//                 <div className="image-wrapper">
-//                     <img className='ruger' src="images/Rugerlive.jpg" alt="RUGER" />
-//                 </div>
-//                 <div className="ticket-inner">
-//                     <div className="typography">
-//                         <h1>Purchase Summary</h1>
-//                         <p>Name</p>
-//                         <p>Email</p>
-//                         <p>Phone</p>
-//                     </div>
-//                     <div className="button-wrapper">
-//                         <a href="#" className='btn-2'>Submit</a>
-//                     </div>
-//                 </div>
-//             </div>
+{/* <div className="ticket-content">
+                <div className="image-wrapper">
+                    <img className='ruger' src="images/Rugerlive.jpg" alt="RUGER" />
+                </div>
+                <div className="ticket-inner">
+                    <div className="typography">
+                        <h1>Purchase Summary</h1>
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone</p>
+                    </div>
+                    <div className="button-wrapper">
+                        <a href="#" className='btn-2'>Submit</a>
+                    </div>
+                </div>
+            </div> */}
 
 export default Ticket

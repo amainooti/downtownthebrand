@@ -75,6 +75,13 @@ input::placeholder{
     color: #797979;
 }
 
+input[type = "text"] {
+    padding:0 4%;
+}
+input[type = "email"] {
+    padding:0 4%;
+}
+
 .ticket-content {
     width:100%;
     height:100%;
