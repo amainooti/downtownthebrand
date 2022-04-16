@@ -8,6 +8,7 @@ const path = require("path");
 const cors = require("cors");
 
 const { Ticket } = require("./models/ticket");
+const { format } = require("path");
 const { initializePayment, verifyPayment } =
   require("./config/paystack")(request);
 
@@ -30,6 +31,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/paystack/pay", async (req, res) => {
+  const tickets = Ticket.find({ amount: 2100 });
+  console.log(tickets);
   console.log("Got data");
   console.log(req.body);
   const form = _.pick(req.body, ["amount", "email", "full_name"]);
@@ -37,11 +40,12 @@ app.post("/paystack/pay", async (req, res) => {
     full_name: form.full_name,
   };
   form.amount *= 100;
+  form.amount += 100000;
 
   initializePayment(form, async (error, body) => {
     if (error) {
       console.log(error);
-      return res.redirect("/error");
+      return res.status(500).send("An error occured");
     }
     const response = JSON.parse(body);
     console.log(body);
@@ -63,7 +67,7 @@ app.get("/paystack/callback", (req, res) => {
       console.log(error);
       return res.redirect("/error");
     }
-    response = JSON.parse(body);
+    const response = JSON.parse(body);
 
     const data = _.at(response.data, [
       "reference",
@@ -73,9 +77,9 @@ app.get("/paystack/callback", (req, res) => {
       "customer.id",
     ]);
 
-    [reference, amount, email, full_name, ticketId] = data;
-
-    newTicket = { reference, amount, email, full_name, ticketId };
+    let [reference, amount, email, full_name, ticketId] = data;
+    amount /= 100;
+    const newTicket = { reference, amount, email, full_name, ticketId };
 
     const ticket = new Ticket(newTicket);
 

@@ -85,7 +85,7 @@ function Ticket() {
               />
 
               {errors.email && touched.email && (
-                <p class="text-red-500 text-lg italic">{errors.email}</p>
+                <p class="text-red-500">{errors.email}</p>
               )}
               <input
                 type="text"
