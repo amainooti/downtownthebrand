@@ -35,9 +35,10 @@ app.post("/paystack/pay", async (req, res) => {
   console.log(tickets);
   console.log("Got data");
   console.log(req.body);
-  const form = _.pick(req.body, ["amount", "email", "full_name"]);
+  const form = _.pick(req.body, ["amount", "email", "full_name", "phone"]);
   form.metadata = {
     full_name: form.full_name,
+    phone_number: form.phone,
   };
   form.amount *= 100;
   form.amount += 10000;
@@ -52,8 +53,8 @@ app.post("/paystack/pay", async (req, res) => {
     if (response.status === false) {
       return res.status(500).send(`An Error Occured: ${response.message}`);
     }
-    console.log(response.data.reference);
-    console.log(response.data.authorization_url);
+    // console.log(response.data.reference);
+    // console.log(response.data.authorization_url);
     // res.redirect(response.data.authorization_url);
     res.status(200).send(response.data.authorization_url);
   });
@@ -68,18 +69,21 @@ app.get("/paystack/callback", (req, res) => {
       return res.redirect("/error");
     }
     const response = JSON.parse(body);
-
+    console.log(response)
     const data = _.at(response.data, [
       "reference",
       "amount",
       "customer.email",
       "metadata.full_name",
       "customer.id",
+      "metadata.phone_number",
     ]);
 
-    let [reference, amount, email, full_name, ticketId] = data;
+    let [reference, amount, email, full_name, ticketId, phone_number] = data;
     amount /= 100;
-    const newTicket = { reference, amount, email, full_name, ticketId };
+    const newTicket = {
+      reference, amount, email, full_name, ticketId, phone_number
+    };
 
     const ticket = new Ticket(newTicket);
 
@@ -105,10 +109,10 @@ app.get("/receipt/:id", (req, res) => {
         //handle error when the ticket is not found
         res.redirect("/error");
       }
-      res.render("success.pug", { ticket });
+      res.status(200).send(ticket);
     })
     .catch((e) => {
-      res.redirect("/error");
+      res.status(500).send("error");
     });
 });
 

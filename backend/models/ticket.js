@@ -17,6 +17,10 @@ const ticketSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    phone_number: {
+        type: Number,
+        required: true
+    },
     ticketId: {
         type: Number,
         required: true,
