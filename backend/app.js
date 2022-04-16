@@ -105,10 +105,10 @@ app.get("/receipt/:id", (req, res) => {
         //handle error when the ticket is not found
         res.redirect("/error");
       }
-      res.render("success.pug", { ticket });
+      res.status(200).send(ticket);
     })
     .catch((e) => {
-      res.redirect("/error");
+      res.status(500).send("error");
     });
 });
 
