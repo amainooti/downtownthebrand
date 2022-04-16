@@ -13,6 +13,7 @@ function Sucesspage() {
     const pdfExportComponent = React.useRef(null);
 
   return (
+
     <PDFExport
     avoidLinks = {true}
     paperSize = "A4"
@@ -46,6 +47,7 @@ function Sucesspage() {
                 <h2>Phone number: {}</h2>
                 <h2>Ticket ID: {} </h2>
                 <button
+
                     className="btn-submit"
                     onClick={() => {
                         if (pdfExportComponent.current) {
@@ -53,7 +55,8 @@ function Sucesspage() {
             }
           }}
         >
-          Export PDF
+            <i class="fas fa-file-import"></i>
+          Download PDF
         </button>
             </div>
 
