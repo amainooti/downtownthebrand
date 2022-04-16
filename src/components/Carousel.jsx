@@ -34,12 +34,10 @@ const CarouselWrap = styled.div`
   flex-direction: row;
   background-color: #f3f3f3;
   justify-content: space-between;
-  padding: 100px 29px;
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    margin-top: 100px;
+  padding: 0 29px;
+  height: 100vh;
+  @media screen (max-width: 1092) {
+    flex-direction: row;
   }
 `;
 

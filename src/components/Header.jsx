@@ -5,31 +5,21 @@ import "./header.css";
 import D1 from "../assets/images/D1 1.png";
 import DT from "../assets/images/DT.png";
 
-const BurgerBtn = styled.button`
-  display: block;
-  background-color: transparent;
-  border: none;
-`;
 
 function Header() {
   return (
     <div className="nav-container">
       <a href="/">
         <div className="logo-wrapper">
-          <img src={D1} alt="" />
+          <img class="img-1" src={D1} alt="" />
           <img className="img-2" src={DT} alt="" />
         </div>
       </a>
-      <ul className="nav-width">
+      {/* <ul className="nav-width">
         <li className="nav-links">Events</li>
         <li className="nav-links">About</li>
         <li className="nav-links">Content</li>
-      </ul>
-      <BurgerBtn className="ham-burger">
-        <span>
-          <i class="fas fa-bars"></i>
-        </span>
-      </BurgerBtn>
+      </ul> */}
       <div className="nav-btn">
         <Link className="btn" to="/ticket">
           Get ticket

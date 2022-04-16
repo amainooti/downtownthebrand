@@ -8,15 +8,14 @@ import Redbull from "../assets/images/redbull.PNG";
 
 function Middle() {
   return (
-    <div className="container">
-      <div className="image-wrapper">
-        <img src={Redbull} alt="" />
-        <img className="monster" src={monster} alt="" />
-        <img src={Jonzing} alt="" />
-        <img className="impero" src={Impero} alt="" />
-        {/* <img src="images/KE.png" alt="" /> */}
-        <img className="vibes-on-vibes" src={Vibes} alt="" />
-      </div>
+    <div className='container'>
+        <div className="image-wrapper">
+            <img src= {Redbull} alt="" />
+            <img className='monster' src={monster} alt="" />
+            <img src={Jonzing} alt="" />
+            <img className='impero' src={Impero} alt="" />
+            <img className='vibes-on-vibes' src={Vibes} alt="" />
+        </div>
     </div>
   );
 }
