@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import Fade from 'react-reveal/Fade';
 import DTlogo from "../assets/images/DTlogo.png";
 import DTstage from "../assets/images/DTstage.png";
 import DTStoski from "../assets/images/DTtoski.png";
@@ -13,18 +13,21 @@ function Footer() {
     <footer>
       <FooterWrapper>
         <ImageWrapper>
+
           <img className="logo" src={DTlogo} alt="" />
           <img className="stage" src={DTstage} alt="" />
           <img className="toski" src={DTStoski} alt="" />
         </ImageWrapper>
         <TextWrapper>
           <img className="DT" src={DT} alt="" />
+          <Fade right>
           <p>
             At Downtown the Brand, we provide people with lasting memories as well
             as unending happiness and comfort through our Events, Clothing Line,
             Bloggists and Managerial Services. Downtown the Brand stands out to
             make an impression on all clients we serve.
           </p>
+          </Fade>
         </TextWrapper>
       </FooterWrapper>
 

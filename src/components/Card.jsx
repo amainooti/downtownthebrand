@@ -48,8 +48,8 @@ const CardTop = styled.div`
     width: 100%;
     background-color:white;
     padding:0;
-    box-shadow:5px 3px 3px #eee;  
-    object-fit: cover;  
+    box-shadow:5px 3px 3px #eee;
+    object-fit: cover;
     .head-one {
         margin-left:15px;
         font-size:1.5rem;

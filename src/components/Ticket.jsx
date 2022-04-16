@@ -54,7 +54,13 @@ function Ticket() {
                 )
                 .then((response) => {
                   if ((response.status = 200)) {
-                    window.location = response.data;
+                    console.log(response.data);
+                    if (response.data === "Sold Out") {
+                      alert("Sold Out");
+                      setSubmitting(false);
+                    } else {
+                      window.location = response.data;
+                    }
                   }
                 })
                 .catch((error) => {

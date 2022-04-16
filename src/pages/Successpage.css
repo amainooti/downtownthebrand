@@ -71,6 +71,9 @@
     color: #be8200;
     border: 1px solid #be8200;
 }
+.fa-file-import {
+    padding: 0 9px;
+}
 
 @media screen and (max-width: 768px) {
     .success-wrapper .top-wrapper {

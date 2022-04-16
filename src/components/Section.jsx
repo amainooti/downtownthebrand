@@ -3,11 +3,13 @@ import "./section.css";
 import RugerLive from "../assets/images/RUGER.png";
 import RugerImage from "../assets/images/image1.png";
 import { Link } from "react-router-dom";
+import Fade from 'react-reveal/Fade';
 
 function Section() {
   return (
     <div className="hero-container">
       <div className="hero-content">
+      <Fade left>
         <div className="top-hero">
           <div className="live-wrapper">
             <img src={RugerLive} alt="" />
@@ -18,6 +20,7 @@ function Section() {
             <p>5PM</p>
           </div>
         </div>
+        </Fade>
         <div className="middle-hero">
           <h1 className="first-child">Tickets</h1>
           <div className="vertical"></div>

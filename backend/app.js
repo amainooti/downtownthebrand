@@ -31,10 +31,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/paystack/pay", async (req, res) => {
-  const tickets = Ticket.find({ amount: 2100 });
+  const tickets = await Ticket.find({ amount: 2100 }).count();
   console.log(tickets);
-  console.log("Got data");
-  console.log(req.body);
+  if (tickets >= 2 && parseInt(req.body.amount) === 2000) {
+    return res.status(200).send("Sold Out");
+  }
   const form = _.pick(req.body, ["amount", "email", "full_name", "phone"]);
   form.metadata = {
     full_name: form.full_name,
