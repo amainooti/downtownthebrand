@@ -14,7 +14,6 @@ function Middle() {
             <img className='monster' src={monster} alt="" />
             <img src={Jonzing} alt="" />
             <img className='impero' src={Impero} alt="" />
-            {/* <img src="images/KE.png" alt="" /> */}
             <img className='vibes-on-vibes' src={Vibes} alt="" />
         </div>
     </div>

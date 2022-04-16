@@ -7,23 +7,30 @@ import DTStoski from "../assets/images/DTtoski.png";
 import DT from "../assets/images/DT.png";
 
 function Footer() {
+  const datetime = new Date().getFullYear;
+
   return (
-    <FooterWrapper>
-      <ImageWrapper>
-        <img className="logo" src={DTlogo} alt="" />
-        <img className="stage" src={DTstage} alt="" />
-        <img className="toski" src={DTStoski} alt="" />
-      </ImageWrapper>
-      <TextWrapper>
-        <img className="DT" src={DT} alt="" />
-        <p>
-          At Downtown the Brand, we provide people with lasting memories as well
-          as unending happiness and comfort through our Events, Clothing Line,
-          Bloggists and Managerial Services. Downtown the Brand stands out to
-          make an impression on all clients we serve.
-        </p>
-      </TextWrapper>
-    </FooterWrapper>
+    <footer>
+      <FooterWrapper>
+        <ImageWrapper>
+          <img className="logo" src={DTlogo} alt="" />
+          <img className="stage" src={DTstage} alt="" />
+          <img className="toski" src={DTStoski} alt="" />
+        </ImageWrapper>
+        <TextWrapper>
+          <img className="DT" src={DT} alt="" />
+          <p>
+            At Downtown the Brand, we provide people with lasting memories as well
+            as unending happiness and comfort through our Events, Clothing Line,
+            Bloggists and Managerial Services. Downtown the Brand stands out to
+            make an impression on all clients we serve.
+          </p>
+        </TextWrapper>
+      </FooterWrapper>
+        <FooterEnd>
+            <p> &copy; copyright downtown the brand {datetime} all rights reserved </p>
+        </FooterEnd>
+      </footer>
   );
 }
 
@@ -113,5 +120,19 @@ const TextWrapper = styled.div`
     }
   }
 `;
+
+const FooterEnd = styled.div`
+  width: 100%;
+  height: 14vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 2.5rem;
+    color: #fff;
+  }
+`
+
 
 export default Footer;

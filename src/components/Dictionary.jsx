@@ -1,7 +1,12 @@
+import Image1 from "../assets/images/image1.png";
+import Image2 from "../assets/images/image2.png"
+import Image3 from "../assets/images/image3.png"
+import Image4 from "../assets/images/image4.png"
+
 const cardDetails = [
     {
         id: 1,
-        imgUrl:"/images/image1.png",
+        imgUrl: Image1,
         name: "Ruger live in ABUAD",
         date: "fri, april 22, 5:00pm",
         venue: "Alfa Belgore Hall - Afebabalola University",
@@ -10,7 +15,7 @@ const cardDetails = [
     },
     {
         id: 2,
-        imgUrl:"/images/image2.png",
+        imgUrl: Image2,
         name: "Vibration - energy undamped",
         date: "fri, Nov 26, 5:00pm",
         venue: "Alfa Belgore Hall - Afebabalola University",
@@ -19,7 +24,7 @@ const cardDetails = [
     },
     {
         id: 3,
-        imgUrl:"/images/image3.png",
+        imgUrl: Image3,
         name: "Escape SZN",
         date: "sat, July 31, 2:00pm",
         venue: "Book your ticket to unlock venue",
@@ -28,7 +33,7 @@ const cardDetails = [
     },
     {
         id: 4,
-        imgUrl:"/images/image4.png",
+        imgUrl: Image4,
         name: "Eskimo",
         date: "sat, Aug 16, 6:00pm",
         venue: "Jabi - Abuja",

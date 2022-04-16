@@ -20,11 +20,11 @@ function Header() {
           <img className="img-2" src={DT} alt="" />
         </div>
       </a>
-      <ul className="nav-width">
+      {/* <ul className="nav-width">
         <li className="nav-links">Events</li>
         <li className="nav-links">About</li>
         <li className="nav-links">Content</li>
-      </ul>
+      </ul> */}
       <BurgerBtn className="ham-burger">
         <span>
           <i class="fas fa-bars"></i>
