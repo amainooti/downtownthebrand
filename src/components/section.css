@@ -141,6 +141,7 @@
   .hero-container {
     display: flex;
     flex-direction: column;
+    height: auto;
   }
   .live-wrapper {
     width: 100%;
