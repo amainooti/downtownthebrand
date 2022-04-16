@@ -40,7 +40,7 @@ app.post("/paystack/pay", async (req, res) => {
     full_name: form.full_name,
   };
   form.amount *= 100;
-  form.amount += 100000;
+  form.amount += 10000;
 
   initializePayment(form, async (error, body) => {
     if (error) {

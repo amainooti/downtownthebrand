@@ -39,13 +39,19 @@ function Ticket() {
           </div>
         </div>
         <Formik
-          initialValues={{ full_name: "", amount: "2000", email: "" }}
+          initialValues={{
+            full_name: "",
+            amount: "2000",
+            email: "",
+            phone: "",
+          }}
           validationSchema={Yup.object().shape({
             full_name: Yup.string().required("Full Name is required!"),
             email: Yup.string()
               .email("Must be a valid email")
               .required("Email is required"),
             amount: Yup.number().required("Amount is required"),
+            phone: Yup.number().required("Phone Number is required!"),
           })}
           onSubmit={(values) => {
             // setConfig({ amount: values.amount, email: values.email });
@@ -54,7 +60,7 @@ function Ticket() {
 
             axios
               .post(
-                "http://127.0.0.1:3500/paystack/pay",
+                "/paystack/pay",
                 { ...values },
                 { headers: { "Access-Control-Allow-Origin": "*" } }
               )
@@ -83,13 +89,20 @@ function Ticket() {
                 onChange={handleChange}
                 name="full_name"
                 placeholder="Name"
+                className={
+                  errors.full_name && touched.full_name && "border-red-500"
+                }
               />
+              {errors.full_name && touched.full_name && (
+                <p class="text-red-500">{errors.full_name}</p>
+              )}
               <input
                 type="email"
                 value={values.email}
                 onChange={handleChange}
                 name="email"
                 placeholder="Email"
+                className={errors.email && touched.email && "border-red-500"}
               />
 
               {errors.email && touched.email && (
@@ -97,10 +110,22 @@ function Ticket() {
               )}
               <input
                 type="text"
+                value={values.phone}
+                onChange={handleChange}
+                name="phone"
+                placeholder="Phone Number"
+                className={errors.phone && touched.phone && "border-red-500"}
+              />
+              {errors.phone && touched.phone && (
+                <p class="text-red-500">{errors.phone}</p>
+              )}
+              <input
+                type="text"
                 value={values.amount}
                 onChange={handleChange}
                 name="amount"
-                placeholder="Phone"
+                placeholder={values.amount}
+                disabled
               />
               <div className="button-wrapper">
                 {isSubmitting ? (

@@ -13,9 +13,13 @@ function Card(props) {
         <p className="date">{props.date}</p>
         <p className="location">{props.venue}</p>
         <p className="price">{props.price}</p>
-        <ButtonWrapper>
-          <a href="#">{props.btn}</a>
-        </ButtonWrapper>
+        {props.btn === "closed" ? (
+          <DisabledBtn disabled>{props.btn}</DisabledBtn>
+        ) : (
+          <ButtonWrapper>
+            <a href="/ticket">{props.btn}</a>
+          </ButtonWrapper>
+        )}
       </CardBottom>
     </CardContainer>
   );
@@ -27,11 +31,13 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  height: 239.36px;
   background-color: #fff;
   margin-top: 6%;
-  margin-left: 32px;
+  margin: 15px 10px;
   ${"" /* text-align:center; */}
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;
+  }
 `;
 const CardTop = styled.div`
   display: flex;
@@ -42,10 +48,8 @@ const CardTop = styled.div`
     width: 100%;
     background-color:white;
     padding:0;
-    border-bottom-left-radius:8px;
-    border-bottom-right-radius:8px;
-    box-shadow:5px 3px 3px #eee;
-
+    box-shadow:5px 3px 3px #eee;  
+    object-fit: cover;  
     .head-one {
         margin-left:15px;
         font-size:1.5rem;
@@ -83,7 +87,6 @@ const CardBottom = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
   background-color: white;
   padding: 0;
   border-bottom-left-radius: 8px;
@@ -123,13 +126,13 @@ const CardBottom = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   width: 100%;
-  height: 30px;
   margin-bottom: 30px;
   text-align: center;
   margin-left: -25px;
   a {
     padding-bottom: 5px;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
     text-decoration: none;
     width: 100%;
     height: 100%;
@@ -140,6 +143,13 @@ const ButtonWrapper = styled.div`
     color: rgba(147, 107, 0, 1);
     text-align: center;
   }
+`;
+
+const DisabledBtn = styled.button`
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  margin: 0px 10px 20px;
+  border: 1px solid #efefef;
 `;
 
 export default Card;
