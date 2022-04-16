@@ -28,7 +28,7 @@ function Footer() {
         </TextWrapper>
       </FooterWrapper>
         <FooterEnd>
-            <p> &copy; copyright downtown the brand {datetime} all rights reserved </p>
+            <p> Copyright &copy; downtown the brand {datetime} all rights reserved. </p>
         </FooterEnd>
       </footer>
   );

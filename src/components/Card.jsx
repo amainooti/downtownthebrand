@@ -11,7 +11,7 @@ function Card(props) {
         <img src= {props.image} alt="" />
         </CardTop>
         <CardBottom>
-            <h1>{props.name}</h1>
+            <h1 className='head-one'>{props.name}</h1>
             <p className='date'>{props.date}</p>
             <p className='location'>{props.venue}</p>
             <p className='price'>{props.price}</p>
@@ -60,10 +60,12 @@ const CardBottom = styled.div`
     border-bottom-left-radius:8px;
     border-bottom-right-radius:8px;
     box-shadow:5px 3px 3px #eee;
-    h1 {
+
+    .head-one {
         margin-left:15px;
         font-size:1.5rem;
         font-weight: bold;
+        text-transform: "uppercase";
     }
     .date {
         margin-left:15px;

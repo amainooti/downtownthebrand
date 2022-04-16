@@ -8,7 +8,7 @@ const cardDetails = [
         id: 1,
         imgUrl: Image1,
         name: "Ruger live in ABUAD",
-        date: "fri, april 22, 5:00pm",
+        date: "Fri, 22 April 2022,  5:00pm",
         venue: "Alfa Belgore Hall - Afebabalola University",
         price: "starts at  ₦2000",
         btn: "get ticket"
@@ -17,7 +17,7 @@ const cardDetails = [
         id: 2,
         imgUrl: Image2,
         name: "Vibration - energy undamped",
-        date: "fri, Nov 26, 5:00pm",
+        date: "Fri, 26 Nov 2021, 5:00pm",
         venue: "Alfa Belgore Hall - Afebabalola University",
         price: "starts at  ₦2000",
         btn: "closed"
@@ -26,7 +26,7 @@ const cardDetails = [
         id: 3,
         imgUrl: Image3,
         name: "Escape SZN",
-        date: "sat, July 31, 2:00pm",
+        date: "Sat, 31 July 2020,  2:00pm",
         venue: "Book your ticket to unlock venue",
         price: "starts at  ₦15000",
         btn: "closed"
@@ -35,7 +35,7 @@ const cardDetails = [
         id: 4,
         imgUrl: Image4,
         name: "Eskimo",
-        date: "sat, Aug 16, 6:00pm",
+        date: "Sat, 16 Aug 2019, 6:00pm",
         venue: "Jabi - Abuja",
         price: "starts at  ₦3000",
         btn: "closed"

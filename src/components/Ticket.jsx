@@ -67,7 +67,7 @@ function Ticket() {
                 value={values.full_name}
                 onChange={handleChange}
                 name="full_name"
-                placeholder="Name:"
+                placeholder="Name"
               />
               <input
                 type="email"
