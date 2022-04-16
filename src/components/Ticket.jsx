@@ -1,30 +1,18 @@
 import React from "react";
 import axios from "axios";
 import { Formik } from "formik";
-import { usePaystackPayment } from "react-paystack";
+import styled from "styled-components";
 import * as Yup from "yup";
 
 import "./Ticket.css";
 
+const DisabledBtn = styled.button`
+  border: 1px solid #efefef;
+  padding: 10px;
+  height: auto !important;
+`;
+
 function Ticket() {
-  const [config, setConfig] = React.useState({
-    reference: new Date().getTime().toString(),
-    email: "john@gmail.com",
-    amount: "5000",
-    publicKey: "pk_test_30a38a70272f62f99fd392d9925674fe3dfd4bd1",
-  });
-  const initalizePayment = usePaystackPayment(config);
-  const onSuccess = (reference) => {
-    // Implementation for whatever you want to do with reference and after success call.
-    console.log(reference);
-  };
-
-  // you can call this function anything
-  const onClose = () => {
-    // implementation for  whatever you want to do when the Paystack dialog closed.
-    console.log("closed");
-  };
-
   return (
     <div className="ticket-container">
       <div className="ticket-form">
@@ -128,14 +116,10 @@ function Ticket() {
                 disabled
               />
               <div className="button-wrapper">
-                {isSubmitting ? (
-                  <button type="button" className="bg-indigo-500 ..." disabled>
-                    <svg
-                      className="animate-spin h-5 w-5 mr-3 ..."
-                      viewBox="0 0 24 24"
-                    ></svg>
+                {!isSubmitting ? (
+                  <DisabledBtn type="button" disabled>
                     Processing...
-                  </button>
+                  </DisabledBtn>
                 ) : (
                   <button href="" type="submit" className="btn-2">
                     Submit
