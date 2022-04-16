@@ -15,11 +15,7 @@ function Header() {
           <img className="img-2" src={DT} alt="" />
         </div>
       </a>
-      {/* <ul className="nav-width">
-        <li className="nav-links">Events</li>
-        <li className="nav-links">About</li>
-        <li className="nav-links">Content</li>
-      </ul> */}
+
       <div className="nav-btn">
         <Link className="btn" to="/ticket">
           Get ticket
