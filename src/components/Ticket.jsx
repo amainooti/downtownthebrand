@@ -116,7 +116,7 @@ function Ticket() {
                 disabled
               />
               <div className="button-wrapper">
-                {!isSubmitting ? (
+                {isSubmitting ? (
                   <DisabledBtn type="button" disabled>
                     Processing...
                   </DisabledBtn>
