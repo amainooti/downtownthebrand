@@ -1,4 +1,12 @@
-import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import React from "react";
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useNavigate,
+  Navigate,
+} from "react-router-dom";
 
 // import ending from "./components/ending";
 import Header from "./components/Header";
@@ -17,13 +25,12 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
-
         </Routes>
         <Routes>
           <Route exact path="/ticket" element={<Ticket />} />
         </Routes>
         <Routes>
-          <Route exact path="/success" element={<Sucesspage />} />
+          <Route exact path="/paystack/success" element={<Sucesspage />} />
         </Routes>
         {/* <Route path="*" exact element = { <Navigate to= "/" />} /> */}
         <Footer />

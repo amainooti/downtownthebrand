@@ -69,7 +69,7 @@ app.get("/paystack/callback", (req, res) => {
       return res.redirect("/error");
     }
     const response = JSON.parse(body);
-    console.log(response)
+    console.log(response);
     const data = _.at(response.data, [
       "reference",
       "amount",
@@ -82,7 +82,12 @@ app.get("/paystack/callback", (req, res) => {
     let [reference, amount, email, full_name, ticketId, phone_number] = data;
     amount /= 100;
     const newTicket = {
-      reference, amount, email, full_name, ticketId, phone_number
+      reference,
+      amount,
+      email,
+      full_name,
+      ticketId,
+      phone_number,
     };
 
     const ticket = new Ticket(newTicket);
@@ -91,12 +96,12 @@ app.get("/paystack/callback", (req, res) => {
       .save()
       .then((ticket) => {
         if (!ticket) {
-          return res.redirect("/error");
+          return res.status(500).send("Invalid Transaction");
         }
         res.redirect("/receipt/" + ticket._id);
       })
       .catch((e) => {
-        res.redirect("/error");
+        return res.status(500).send("Invalid Transaction");
       });
   });
 });

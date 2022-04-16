@@ -41,25 +41,30 @@ function Ticket() {
             amount: Yup.number().required("Amount is required"),
             phone: Yup.number().required("Phone Number is required!"),
           })}
-          onSubmit={(values) => {
+          onSubmit={(values, { setSubmitting }) => {
             // setConfig({ amount: values.amount, email: values.email });
             // console.log(config);
             // initalizePayment(onSuccess, onClose);
-
-            axios
-              .post(
-                "/paystack/pay",
-                { ...values },
-                { headers: { "Access-Control-Allow-Origin": "*" } }
-              )
-              .then((response) => {
-                if ((response.status = 200)) {
-                  window.location = response.data;
-                }
-              })
-              .catch((error) => {
-                console.log(error.message);
-              });
+            try {
+              axios
+                .post(
+                  "/paystack/pay",
+                  { ...values },
+                  { headers: { "Access-Control-Allow-Origin": "*" } }
+                )
+                .then((response) => {
+                  if ((response.status = 200)) {
+                    window.location = response.data;
+                  }
+                })
+                .catch((error) => {
+                  alert(error.message);
+                  setSubmitting(false);
+                });
+            } catch (error) {
+              alert(error.message);
+              setSubmitting(false);
+            }
           }}
         >
           {({
