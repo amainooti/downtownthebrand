@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./header.css";
+import D1 from "../assets/images/D1 1.png";
+import DT from "../assets/images/DT.png";
 
 function Header() {
   return (
         <div className="nav-container">
             <div className="logo-wrapper">
-                <img src="images/D1 1.png" alt="" />
-                <img className='img-2' src="images/DT.png" alt="" />
+                <img src={D1} alt="" />
+                <img className='img-2' src={DT} alt="" />
             </div>
             <ul className='nav-width'>
                 <li className='nav-links'>Events</li>

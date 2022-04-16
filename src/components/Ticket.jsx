@@ -2,6 +2,10 @@ import React from "react";
 import axios from "axios";
 import { Formik } from "formik";
 import { usePaystackPayment } from "react-paystack";
+<<<<<<< HEAD
+=======
+import RugerLive from "../assets/images/Rugerlive.jpg";
+>>>>>>> 8b3d16b9d5f58965fd946914ec8e01146e7c4cb7
 
 import "./Ticket.css";
 
@@ -106,21 +110,21 @@ function Ticket() {
   );
 }
 
-// <div className="ticket-content">
-//                 <div className="image-wrapper">
-//                     <img className='ruger' src="images/Rugerlive.jpg" alt="RUGER" />
-//                 </div>
-//                 <div className="ticket-inner">
-//                     <div className="typography">
-//                         <h1>Purchase Summary</h1>
-//                         <p>Name</p>
-//                         <p>Email</p>
-//                         <p>Phone</p>
-//                     </div>
-//                     <div className="button-wrapper">
-//                         <a href="#" className='btn-2'>Submit</a>
-//                     </div>
-//                 </div>
-//             </div>
+{/* <div className="ticket-content">
+                <div className="image-wrapper">
+                    <img className='ruger' src="images/Rugerlive.jpg" alt="RUGER" />
+                </div>
+                <div className="ticket-inner">
+                    <div className="typography">
+                        <h1>Purchase Summary</h1>
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone</p>
+                    </div>
+                    <div className="button-wrapper">
+                        <a href="#" className='btn-2'>Submit</a>
+                    </div>
+                </div>
+            </div> */}
 
 export default Ticket;
