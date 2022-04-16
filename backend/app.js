@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public/")));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "*",
   })
 );
 app.set("view engine", pug);

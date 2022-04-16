@@ -1,106 +1,116 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
+
+import DTlogo from "../assets/images/DTlogo.png";
+import DTstage from "../assets/images/DTstage.png";
+import DTStoski from "../assets/images/DTtoski.png";
+import DT from "../assets/images/DT.png";
 
 function Footer() {
   return (
     <FooterWrapper>
-        <ImageWrapper>
-            <img className='logo' src="/images/DTlogo.png" alt="" />
-            <img className='stage' src="/images/DTstage.png" alt="" />
-            <img className='toski' src="/images/DTtoski.png" alt="" />
-        </ImageWrapper>
-        <TextWrapper>
-            <img className='DT' src="/images/DT.png" alt="" />
-            <p>At Downtown the Brand, we provide people with lasting memories as well as unending happiness and comfort through our Events, Clothing Line, Bloggists and Managerial Services. Downtown the Brand stands out to make an impression on all clients we serve.</p>
-        </TextWrapper>
+      <ImageWrapper>
+        <img className="logo" src={DTlogo} alt="" />
+        <img className="stage" src={DTstage} alt="" />
+        <img className="toski" src={DTStoski} alt="" />
+      </ImageWrapper>
+      <TextWrapper>
+        <img className="DT" src={DT} alt="" />
+        <p>
+          At Downtown the Brand, we provide people with lasting memories as well
+          as unending happiness and comfort through our Events, Clothing Line,
+          Bloggists and Managerial Services. Downtown the Brand stands out to
+          make an impression on all clients we serve.
+        </p>
+      </TextWrapper>
     </FooterWrapper>
-  )
+  );
 }
 
 const FooterWrapper = styled.div`
-    position:absolute;
-    left:0;
-    width:100%;
-    height:700px;
-    background-color:#000;
-    display:flex;
-    @media (max-width:768px){
-        display: block;
-        height:1200px;
-        position:absolute;
-        left:0;
-
-    }
-`
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  background-color: #000;
+  display: flex;
+  @media (max-width: 768px) {
+    display: block;
+    height: fit-content;
+  }
+`;
 const ImageWrapper = styled.div`
-    position:relative;
-    width:50%;
+  position: relative;
+  width: 50%;
+  img {
+    width: 250px;
+    height: 200px;
+    position: absolute;
+  }
+  .logo {
+    right: 150px;
+    top: 200px;
+    width: 250px;
+    height: 250px;
+    z-index: 10;
+  }
+  .toski {
+    top: 400px;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    width: 220px;
+    height: 207px;
+  }
+  .stage {
+    right: 0px;
+    top: 80px;
+    z-index: 1;
+    width: 262px;
+    height: 200px;
+  }
+  @media (max-width: 768px) {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    justify-content: flex-start;
+    align-items: center;
     img {
-        width:250px;
-        height:200px;
-        position:absolute;
+      position: relative;
+      top: unset !important;
+      left: unset !important;
+      right: unset !important;
+      width: 250px !important;
+      height: 250px !important;
     }
-    .logo {
-        right:150px;
-        top:200px;
-        width: 250px;
-        height:250px;
-        z-index:10;
-    }
-    .toski {
-        top:400px;
-        bottom:0;
-        right:0;
-        z-index:100;
-        width:220px;
-        height:207px;
-    }
-    .stage {
-        right:0px;
-        top:80px;
-        z-index:1;
-        width:262px;
-        height:200px;
-
-    }
-    @media (max-width:768px) {
-        margin-left:240px;
-        margin-top: 180px;
-    }
-`
+  }
+`;
 const TextWrapper = styled.div`
+  width: 55%;
+  height: 85%;
+  margin-left: 100px;
+  margin-top: 100px;
+  .DT {
+    text-align: center;
+  }
 
-    width:55%;
-    height: 85%;
-    margin-left:100px;
-    margin-top: 100px;
-    .DT {
-        text-align:center;
+  p {
+    color: white;
+    font-size: 35px;
+    line-height: 64.88px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 20px 5px;
+    margin: 0px;
+    img {
     }
-
-    p{
-        color:white;
-        font-size:35px;
-        line-height:64.88px;
+    p {
+      margin-top: 20px;
     }
-    @media (max-width:768px){
-        margin-top:680px;
-        padding:0 30px;
-        width:80%;
+  }
+`;
 
-        img {
-
-            margin-right: 80px;
-            position:absolute;
-            top:80px;
-
-        }
-        p {
-            margin-left:-120px;
-            margin-top:80px;
-            transform:translateY(80%);
-        }
-    }
-`
-
-export default Footer
+export default Footer;
