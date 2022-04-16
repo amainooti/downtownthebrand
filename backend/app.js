@@ -38,9 +38,10 @@ app.post("/paystack/pay", async (req, res) => {
   const form = _.pick(req.body, ["amount", "email", "full_name", "phone"]);
   form.metadata = {
     full_name: form.full_name,
+    phone_number: form.phone,
   };
   form.amount *= 100;
-  form.amount += 100000;
+  form.amount += 10000;
 
   initializePayment(form, async (error, body) => {
     if (error) {
@@ -52,8 +53,8 @@ app.post("/paystack/pay", async (req, res) => {
     if (response.status === false) {
       return res.status(500).send(`An Error Occured: ${response.message}`);
     }
-    console.log(response.data.reference);
-    console.log(response.data.authorization_url);
+    // console.log(response.data.reference);
+    // console.log(response.data.authorization_url);
     // res.redirect(response.data.authorization_url);
     res.status(200).send(response.data.authorization_url);
   });
@@ -68,20 +69,20 @@ app.get("/paystack/callback", (req, res) => {
       return res.redirect("/error");
     }
     const response = JSON.parse(body);
-
+    console.log(response)
     const data = _.at(response.data, [
       "reference",
       "amount",
       "customer.email",
       "metadata.full_name",
       "customer.id",
-      "customer.phone",
+      "metadata.phone_number",
     ]);
 
-    let [reference, amount, email, full_name, ticketId, phone] = data;
+    let [reference, amount, email, full_name, ticketId, phone_number] = data;
     amount /= 100;
     const newTicket = {
-      reference, amount, email, full_name, ticketId, phone
+      reference, amount, email, full_name, ticketId, phone_number
     };
 
     const ticket = new Ticket(newTicket);

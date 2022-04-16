@@ -17,7 +17,7 @@ const ticketSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    number: {
+    phone_number: {
         type: Number,
         required: true
     },
