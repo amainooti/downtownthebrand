@@ -8,13 +8,15 @@ function Card(props) {
       <CardTop>
         <img src={props.image} alt="" />
       </CardTop>
-      <h1 className="head-one">{props.name}</h1>
-      <p className="date">{props.date}</p>
-      <p className="location">{props.venue}</p>
-      <p className="price">{props.price}</p>
-      <ButtonWrapper>
-        <a href="#">{props.btn}</a>
-      </ButtonWrapper>
+      <CardBottom>
+        <h1 className="head-one">{props.name}</h1>
+        <p className="date">{props.date}</p>
+        <p className="location">{props.venue}</p>
+        <p className="price">{props.price}</p>
+        <ButtonWrapper>
+          <a href="#">{props.btn}</a>
+        </ButtonWrapper>
+      </CardBottom>
     </CardContainer>
   );
 }
@@ -74,6 +76,48 @@ const CardTop = styled.div`
         color: #959595;
         margin-bottom: 8px;
     }
+`;
+
+const CardBottom = styled.div`
+  text-transform: Capitalize;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 5px 3px 3px #eee;
+  h1 {
+    margin-left: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .date {
+    margin-left: 15px;
+    font-family: "Chathura";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #eb5515;
+  }
+  .location {
+    margin-left: 15px;
+    font-family: "Chathura";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #959595;
+  }
+  .price {
+    margin-left: 15px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #959595;
+    margin-bottom: 8px;
+  }
 `;
 
 const ButtonWrapper = styled.div`
