@@ -2,13 +2,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
 .hero-container {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  height: 80vh;
+
   background-color: #000;
 }
 
@@ -142,6 +143,7 @@
     display: flex;
     height: auto;
     flex-direction: column;
+    height: auto;
   }
   .live-wrapper {
     width: 100%;

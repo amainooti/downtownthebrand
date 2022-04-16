@@ -40,7 +40,9 @@ const CarouselWrap = styled.div`
     display:flex;
     flex-direction:row;
     background-color:#F3F3F3;
-    height: 150vh;
+    justify-content: space-between;
+    padding: 0 29px;
+    height: 100vh;
       @media screen (max-width:1092) {
         flex-direction:row;
 

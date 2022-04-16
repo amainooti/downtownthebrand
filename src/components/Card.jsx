@@ -25,7 +25,7 @@ function Card(props) {
 
 const CardContainer = styled.div`
     background-color:#fff;
-    width: 245.99px;
+    width: 100%;
     display:flex;
     flex-direction:column;
     border-radius:8px;
@@ -55,7 +55,6 @@ const CardBottom = styled.div`
     display:flex;
     flex-direction:column;
     width: 100%;
-    height:100%;
     background-color:white;
     padding:0;
     border-bottom-left-radius:8px;

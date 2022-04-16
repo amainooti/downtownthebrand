@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./Middle.css";
 import Jonzing from "../assets/images/jonzing.PNG";
 import monster from "../assets/images/Monster Logo.png";
@@ -17,7 +17,7 @@ function Middle() {
             <img className='vibes-on-vibes' src={Vibes} alt="" />
         </div>
     </div>
-  )
+  );
 }
 
-export default Middle
+export default Middle;
