@@ -35,7 +35,7 @@ app.post("/paystack/pay", async (req, res) => {
   console.log(tickets);
   console.log("Got data");
   console.log(req.body);
-  const form = _.pick(req.body, ["amount", "email", "full_name"]);
+  const form = _.pick(req.body, ["amount", "email", "full_name", "phone"]);
   form.metadata = {
     full_name: form.full_name,
   };
@@ -75,11 +75,14 @@ app.get("/paystack/callback", (req, res) => {
       "customer.email",
       "metadata.full_name",
       "customer.id",
+      "customer.phone",
     ]);
 
-    let [reference, amount, email, full_name, ticketId] = data;
+    let [reference, amount, email, full_name, ticketId, phone] = data;
     amount /= 100;
-    const newTicket = { reference, amount, email, full_name, ticketId };
+    const newTicket = {
+      reference, amount, email, full_name, ticketId, phone
+    };
 
     const ticket = new Ticket(newTicket);
 
