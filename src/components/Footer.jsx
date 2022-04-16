@@ -109,6 +109,7 @@ const TextWrapper = styled.div`
     }
     p {
       margin-top: 20px;
+      line-height: 30px;
     }
   }
 `;
