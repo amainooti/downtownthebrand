@@ -6,6 +6,7 @@ import "./App.css";
 
 import Home from "./pages/Home";
 import Ticket from "./pages/Ticket";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/ticket" element={<Ticket />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
