@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Chathura&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Chathura&display=swap");
 
-
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
 body {
   /* overflow-x: hidden; */
-  font-family: 'Chathura', sans-serif;
+  font-family: "Chathura", sans-serif;
   width: 100%;
-  overflow-x: hidden;
 }
 
+#root {
+  overflow-x: hidden;
+}

@@ -39,24 +39,26 @@ function Ticket() {
         </div>
         <Formik
           initialValues={{ full_name: "", amount: "2000", email: "" }}
-          onSubmit={(values) => {
+          onSubmit={(values, { setSubmitting }) => {
             // setConfig({ amount: values.amount, email: values.email });
             // console.log(config);
             // initalizePayment(onSuccess, onClose);
 
             axios
               .post(
-                "http://127.0.0.1:3500/paystack/pay",
+                "/paystack/pay",
                 { ...values },
                 { headers: { "Access-Control-Allow-Origin": "*" } }
               )
               .then((response) => {
                 if ((response.status = 200)) {
                   window.location = response.data;
+                  setSubmitting(false);
                 }
               })
               .catch((error) => {
-                console.log(error.message);
+                alert(error);
+                setSubmitting(false);
               });
           }}
         >
@@ -81,7 +83,7 @@ function Ticket() {
                 value={values.amount}
                 onChange={handleChange}
                 name="amount"
-                placeholder="Phone"
+                placeholder="Amount"
               />
               <div className="button-wrapper">
                 {isSubmitting ? (
@@ -106,7 +108,8 @@ function Ticket() {
   );
 }
 
-{/* <div className="ticket-content">
+{
+  /* <div className="ticket-content">
                 <div className="image-wrapper">
                     <img className='ruger' src="images/Rugerlive.jpg" alt="RUGER" />
                 </div>
@@ -121,6 +124,7 @@ function Ticket() {
                         <a href="#" className='btn-2'>Submit</a>
                     </div>
                 </div>
-            </div> */}
+            </div> */
+}
 
 export default Ticket;
