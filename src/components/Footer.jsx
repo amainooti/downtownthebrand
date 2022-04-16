@@ -27,9 +27,9 @@ function Footer() {
           </p>
         </TextWrapper>
       </FooterWrapper>
-        <FooterEnd>
-            <p> Copyright &copy; downtown the brand {datetime} all rights reserved. </p>
-        </FooterEnd>
+
+      <p> Copyright &copy; Downtown the brand {datetime} all rights reserved. </p>
+
       </footer>
   );
 }
@@ -121,18 +121,7 @@ const TextWrapper = styled.div`
   }
 `;
 
-const FooterEnd = styled.div`
-  width: 100%;
-  height: 14vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  p {
-    font-size: 2.5rem;
-    color: #fff;
-  }
-`
 
 
 export default Footer;

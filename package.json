@@ -4,6 +4,9 @@
   "private": true,
   "proxy": "http://127.0.0.1:3500",
   "dependencies": {
+    "@progress/kendo-drawing": "^1.16.3",
+    "@progress/kendo-licensing": "^1.2.2",
+    "@progress/kendo-react-pdf": "^5.2.0",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",

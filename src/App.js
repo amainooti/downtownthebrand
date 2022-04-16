@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 
 // import ending from "./components/ending";
 import Header from "./components/Header";
@@ -7,6 +7,8 @@ import "./App.css";
 import Home from "./pages/Home";
 import Ticket from "./pages/Ticket";
 import Footer from "./components/Footer";
+import Sucesspage from "./pages/Sucesspage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -14,11 +16,16 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
+
         </Routes>
         <Routes>
-          <Route path="/ticket" element={<Ticket />} />
+          <Route exact path="/ticket" element={<Ticket />} />
         </Routes>
+        <Routes>
+          <Route exact path="/success" element={<Sucesspage />} />
+        </Routes>
+        {/* <Route path="*" exact element = { <Navigate to= "/" />} /> */}
         <Footer />
       </div>
     </BrowserRouter>
