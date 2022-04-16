@@ -113,7 +113,7 @@ function Ticket() {
                   </button>
                 ) : (
                   <button href="" type="submit" className="btn-2">
-                    submit
+                    Submit
                   </button>
                 )}
               </div>
