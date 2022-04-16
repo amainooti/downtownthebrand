@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Formik } from "formik";
 import { usePaystackPayment } from "react-paystack";
+import * as Yup from "yup";
 
 import "./Ticket.css";
 
@@ -39,6 +40,13 @@ function Ticket() {
         </div>
         <Formik
           initialValues={{ full_name: "", amount: "2000", email: "" }}
+          validationSchema={Yup.object().shape({
+            full_name: Yup.string().required("Full Name is required!"),
+            email: Yup.string()
+              .email("Must be a valid email")
+              .required("Email is required"),
+            amount: Yup.number().required("Amount is required"),
+          })}
           onSubmit={(values) => {
             // setConfig({ amount: values.amount, email: values.email });
             // console.log(config);
@@ -60,7 +68,14 @@ function Ticket() {
               });
           }}
         >
-          {({ values, handleChange, handleSubmit, isSubmitting }) => (
+          {({
+            values,
+            handleChange,
+            errors,
+            touched,
+            handleSubmit,
+            isSubmitting,
+          }) => (
             <form onSubmit={handleSubmit} className="form-cover">
               <input
                 type="text"
@@ -76,13 +91,10 @@ function Ticket() {
                 name="email"
                 placeholder="Email"
               />
-<<<<<<< HEAD
 
               {errors.email && touched.email && (
                 <p class="text-red-500">{errors.email}</p>
               )}
-=======
->>>>>>> f70305881871a6ac065b77d9302cc02f46dac98f
               <input
                 type="text"
                 value={values.amount}
@@ -109,12 +121,12 @@ function Ticket() {
           )}
         </Formik>
       </div>
-
     </div>
   );
 }
 
-{/* <div className="ticket-content">
+{
+  /* <div className="ticket-content">
                 <div className="image-wrapper">
                     <img className='ruger' src="images/Rugerlive.jpg" alt="RUGER" />
                 </div>
@@ -129,6 +141,7 @@ function Ticket() {
                         <a href="#" className='btn-2'>Submit</a>
                     </div>
                 </div>
-            </div> */}
+            </div> */
+}
 
 export default Ticket;

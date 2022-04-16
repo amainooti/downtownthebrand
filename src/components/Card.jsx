@@ -8,15 +8,13 @@ function Card(props) {
       <CardTop>
         <img src={props.image} alt="" />
       </CardTop>
-      <CardBottom>
-        <h1 className="head-one">{props.name}</h1>
-        <p className="date">{props.date}</p>
-        <p className="location">{props.venue}</p>
-        <p className="price">{props.price}</p>
-        <ButtonWrapper>
-          <a href="#">{props.btn}</a>
-        </ButtonWrapper>
-      </CardBottom>
+      <h1 className="head-one">{props.name}</h1>
+      <p className="date">{props.date}</p>
+      <p className="location">{props.venue}</p>
+      <p className="price">{props.price}</p>
+      <ButtonWrapper>
+        <a href="#">{props.btn}</a>
+      </ButtonWrapper>
     </CardContainer>
   );
 }
