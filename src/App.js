@@ -1,26 +1,27 @@
-import styled from "styled-components";
-import Carousel from "./components/Carousel";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Footer from "./components/Footer";
-import Header from './components/Header';
-import Middle from "./components/Middle";
-import Section from "./components/Section";
-import Ticket from "./components/Ticket";
+import Header from "./components/Header";
 import "./App.css";
 
+import Home from "./pages/Home";
+import Ticket from "./pages/Ticket";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Section />
-      <Middle />
-      <Ticket />
-      {/* <Carousel /> */}
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Routes>
+          <Route path="/ticket" element={<Ticket />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
-
-
 
 export default App;

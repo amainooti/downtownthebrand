@@ -2,10 +2,6 @@ import React from "react";
 import axios from "axios";
 import { Formik } from "formik";
 import { usePaystackPayment } from "react-paystack";
-<<<<<<< HEAD
-=======
-import RugerLive from "../assets/images/Rugerlive.jpg";
->>>>>>> 8b3d16b9d5f58965fd946914ec8e01146e7c4cb7
 
 import "./Ticket.css";
 
